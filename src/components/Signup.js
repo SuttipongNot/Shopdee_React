@@ -92,6 +92,8 @@ export default function SignUp() {
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  value={firstName}
+                  onChange={ (e) => setFirstName(e.target.value)}
                   autoFocus
                 />
               </Grid>
@@ -103,6 +105,8 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  value={lastName}
+                  onChange={ (e) => setLastName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
