@@ -100,10 +100,10 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="username"
+                  label="Username"
+                  name="Username"
+                  autoComplete="username"
                   value={username}
                   onChange={ (e) => setUsername(e.target.value) }
                 />
