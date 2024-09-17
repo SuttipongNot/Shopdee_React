@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,7 +13,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
-import React, {useState} from "react";
 
 function Copyright(props) {
   return (
@@ -38,7 +38,7 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
       e.preventDefault();
 
-      const response = await axios.post(process.env.REACT_APP_BASE_URL+'/login',
+      const response = await axios.post(process.env.REACT_APP_BASE_URL+'/admin/login',
           {
               username, 
               password
@@ -51,7 +51,7 @@ export default function SignIn() {
 
       if(result['status'] === true){
           localStorage.setItem('token', result['token']);
-          window.location.href = '/';
+          window.location.href = '/employee';
       }
   }
 
@@ -79,8 +79,8 @@ export default function SignIn() {
               required
               fullWidth
               id="username"
-              label="username"
-              name="username"
+              label="Username"
+              name="Username"
               autoComplete="username"
               value={username}
                 onChange={ (e) => setUsername(e.target.value) }
@@ -92,7 +92,7 @@ export default function SignIn() {
               fullWidth
               name="password"
               label="Password"
-              type="password"
+              type="Password"
               id="password"
               value={password}
               onChange={ (e) => setPassword(e.target.value) }

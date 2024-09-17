@@ -1,6 +1,7 @@
 import './App.css';
 import Signin from './components/Signin';
-import Signup from './components/Signup';
+import RegisterEmployee from './components/RegisterEmployee';
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -8,8 +9,9 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route exact path='/' element={<Signin/>} />
         <Route exact path='/signin' element={<Signin/>} />
-        <Route exact path='/signup' element={<Signup/>}/>
+        <Route exact path='/employee' element={<RegisterEmployee/>}/>
       </Routes>
     </Router>
   );
